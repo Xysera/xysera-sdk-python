@@ -7,6 +7,7 @@ from .exceptions import (
     InsufficientCreditsError,
     JobFailedError,
     ModelUnavailableError,
+    NotFoundError,
     RateLimitError,
     ValidationError,
     XyseraError,
@@ -27,7 +28,7 @@ def _raise_for_status(response: httpx.Response) -> None:
         detail = response.text
 
     status = response.status_code
-    if status == 401:
+    if status in (401, 403):
         raise AuthenticationError(detail, status_code=status)
     if status == 402:
         raise InsufficientCreditsError(detail, status_code=status)
@@ -35,6 +36,8 @@ def _raise_for_status(response: httpx.Response) -> None:
         raise ValidationError(detail, status_code=status)
     if status == 429:
         raise RateLimitError(detail, status_code=status)
+    if status == 404:
+        raise NotFoundError(detail, status_code=status)
     if status == 502:
         raise JobFailedError(detail, status_code=status)
     if status == 503:
@@ -46,9 +49,9 @@ def _upscale_result_from_dict(data: dict) -> UpscaleResult:
     return UpscaleResult(
         job_id=data["job_id"],
         result_url=data["result_url"],
-        width=data["width"],
-        height=data["height"],
-        size_bytes=data["size_bytes"],
+        width=data.get("width"),
+        height=data.get("height"),
+        size_bytes=data.get("size_bytes"),
         credits_charged=data["credits_charged"],
         processing_time=data["processing_time"],
         cold_start_time=data["cold_start_time"],
@@ -61,11 +64,14 @@ def _job_result_from_dict(data: dict) -> JobResult:
     return JobResult(
         job_id=data["job_id"],
         status=data["status"],
+        model_used=data.get("model_used"),
+        input_url=data.get("input_url"),
         result_url=data.get("result_url"),
         credits_charged=data.get("credits_charged"),
         processing_time=data.get("processing_time"),
         cold_start_time=data.get("cold_start_time"),
         inference_time=data.get("inference_time"),
+        created_at=data["created_at"],
     )
 
 

@@ -8,9 +8,9 @@ from pathlib import Path
 class UpscaleResult:
     job_id: str
     result_url: str
-    width: int
-    height: int
-    size_bytes: int
+    width: int | None
+    height: int | None
+    size_bytes: int | None
     credits_charged: float
     processing_time: float
     cold_start_time: float
@@ -67,11 +67,14 @@ class UpscaleResult:
 class JobResult:
     job_id: str
     status: str
+    model_used: str | None
+    input_url: str | None
     result_url: str | None
     credits_charged: float | None
     processing_time: float | None
     cold_start_time: float | None
     inference_time: float | None
+    created_at: str
 
     @property
     def hit_cold_start(self) -> bool:

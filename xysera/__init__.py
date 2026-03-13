@@ -4,6 +4,7 @@ from .exceptions import (
     InsufficientCreditsError,
     JobFailedError,
     ModelUnavailableError,
+    NotFoundError,
     RateLimitError,
     ValidationError,
     XyseraError,
@@ -26,4 +27,5 @@ __all__ = [
     "RateLimitError",
     "JobFailedError",
     "ModelUnavailableError",
+    "NotFoundError",
 ]

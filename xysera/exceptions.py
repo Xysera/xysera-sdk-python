@@ -28,3 +28,7 @@ class JobFailedError(XyseraError):
 
 class ModelUnavailableError(XyseraError):
     """Raised when the requested model is not yet deployed (HTTP 503)."""
+
+
+class NotFoundError(XyseraError):
+    """Raised when the requested resource does not exist or belongs to a different key (HTTP 404)."""
