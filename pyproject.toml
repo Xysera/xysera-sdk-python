@@ -7,6 +7,7 @@ name = "xysera"
 version = "0.1.0"
 description = "Official Python SDK for the Xysera API"
 readme = "README.md"
+authors = [{ name = "Xysera", email = "dev@xysera.com" }]
 license = { text = "MIT" }
 requires-python = ">=3.10"
 dependencies = [
