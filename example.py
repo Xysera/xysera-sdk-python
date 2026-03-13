@@ -9,6 +9,7 @@ Xysera SDK — quick-start example.
 """
 
 import os
+
 import xysera
 
 # ---------------------------------------------------------------------------
@@ -44,7 +45,7 @@ except xysera.ModelUnavailableError:
 except xysera.XyseraError as e:
     raise SystemExit(f"API error (HTTP {e.status_code}): {e}")
 
-print(f"Done!")
+print("Done!")
 print(f"  job_id:          {result.job_id}")
 print(f"  credits_charged: {result.credits_charged}")
 print(f"  processing_time: {result.processing_time}s")
