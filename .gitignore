@@ -1,5 +1,13 @@
-# Test scripts (contain hardcoded dev keys)
+# Test scripts (contain hardcoded dev keys) and output files
 test_sdk.py
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.png
+*.jpg
+*.jpeg
+upscaled_*
 
 # Python
 __pycache__/
