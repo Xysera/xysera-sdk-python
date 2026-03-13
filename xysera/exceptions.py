@@ -31,4 +31,4 @@ class ModelUnavailableError(XyseraError):
 
 
 class NotFoundError(XyseraError):
-    """Raised when the requested resource does not exist or belongs to a different key (HTTP 404)."""
+    """Raised when a resource is not found or belongs to a different key (HTTP 404)."""

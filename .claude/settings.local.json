@@ -4,7 +4,14 @@
       "Bash(pip install:*)",
       "Bash(python test_sdk.py)",
       "Bash(git check-ignore:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(pip3 install:*)",
+      "Bash(python3 -m venv .venv && .venv/bin/pip install build twine --quiet 2>&1 | tail -3)",
+      "Bash(.venv/bin/python -m build 2>&1)",
+      "Bash(.venv/bin/pip install:*)",
+      "Bash(.venv/bin/python test_sdk.py)",
+      "Bash(git remote:*)",
+      "Bash(.venv/bin/ruff check:*)"
     ]
   }
 }

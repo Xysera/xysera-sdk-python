@@ -1,5 +1,10 @@
 # xysera
 
+[![PyPI version](https://img.shields.io/pypi/v/xysera?color=blue)](https://pypi.org/project/xysera/)
+[![Python versions](https://img.shields.io/pypi/pyversions/xysera)](https://pypi.org/project/xysera/)
+[![CI](https://img.shields.io/github/actions/workflow/status/Xysera/xysera-sdk-python/ci.yml?branch=main&label=CI)](https://github.com/Xysera/xysera-sdk-python/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 Official Python SDK for the [Xysera](https://xysera.com) API.
 
 ## Installation
