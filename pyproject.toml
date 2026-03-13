@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "xysera"
+version = "0.1.0"
+description = "Official Python SDK for the Xysera API"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.27",
+]
+
+[project.urls]
+Homepage = "https://xysera.com"
+Repository = "https://github.com/xysera/xysera-sdk-python"
